@@ -97,8 +97,7 @@ class DashboardFragment : Fragment() {
             }
 
             val dataSet = BarDataSet(entries, "Expenses by Category")
-            dataSet.color = resources.getColor(R.color.colorPrimary, null)
-
+            dataSet.color = requireContext().getColor(R.color.colorPrimary) // Use requireContext()
             val data = BarData(dataSet)
             data.barWidth = 0.5f
 

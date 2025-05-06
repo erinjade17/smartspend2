@@ -75,4 +75,9 @@ class ExpenseViewModel(private val expenseRepository: ExpenseRepository) : ViewM
             _categoryTotalAmount.postValue(totalsMap)
         }
     }
+
+    suspend fun getExpenseById(expenseId: Long): Expense? {
+        val result = expenseRepository.getExpenseById(expenseId)
+        return result.getOrNull()
+    }
 }

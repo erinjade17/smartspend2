@@ -33,21 +33,21 @@ class CategoryAdapter(
 
         init {
             binding.root.setOnClickListener {
-                val position = bindingAdapterPosition
+                val position = adapterPosition // Changed to adapterPosition
                 if (position != RecyclerView.NO_POSITION) {
                     onCategoryClick(getItem(position))
                 }
             }
 
             binding.btnEdit.setOnClickListener {
-                val position = bindingAdapterPosition
+                val position = adapterPosition // Changed to adapterPosition
                 if (position != RecyclerView.NO_POSITION) {
                     onEditClick(getItem(position))
                 }
             }
 
             binding.btnDelete.setOnClickListener {
-                val position = bindingAdapterPosition
+                val position = adapterPosition // Changed to adapterPosition
                 if (position != RecyclerView.NO_POSITION) {
                     onDeleteClick(getItem(position))
                 }

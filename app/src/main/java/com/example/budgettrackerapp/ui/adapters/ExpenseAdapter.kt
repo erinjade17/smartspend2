@@ -9,7 +9,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.budgettrackerapp.data.entities.Expense
 import com.example.budgettrackerapp.databinding.ItemExpenseBinding
 import java.text.SimpleDateFormat
-
 import java.util.Date
 import java.util.Locale
 
@@ -37,7 +36,7 @@ class ExpenseAdapter(
 
         init {
             binding.root.setOnClickListener {
-                val position = bindingAdapterPosition
+                val position = adapterPosition // Changed to adapterPosition
                 if (position != RecyclerView.NO_POSITION) {
                     onExpenseClick(getItem(position))
                 }
@@ -45,7 +44,7 @@ class ExpenseAdapter(
         }
 
         fun bind(expense: Expense) {
-            val dateFormat = SimpleDateFormat("MMM dd, yyyy", Locale.getDefault())
+            val dateFormat = SimpleDateFormat("MMM dd, yyyy", Locale.getDefault()) // Corrected date format.
             val timeFormat = SimpleDateFormat("hh:mm a", Locale.getDefault())
 
             binding.tvExpenseAmount.text = "$${String.format("%.2f", expense.amount)}"
@@ -54,7 +53,8 @@ class ExpenseAdapter(
             binding.tvExpenseCategory.text = categoryMap[expense.categoryId] ?: "Unknown"
 
             if (expense.startTime != null && expense.endTime != null) {
-                binding.tvExpenseTime.text = "${timeFormat.format(Date(expense.startTime))} - ${timeFormat.format(Date(expense.endTime))}"
+                binding.tvExpenseTime.text =
+                    "${timeFormat.format(Date(expense.startTime))} - ${timeFormat.format(Date(expense.endTime))}"
                 binding.tvExpenseTime.visibility = View.VISIBLE
             } else {
                 binding.tvExpenseTime.visibility = View.GONE

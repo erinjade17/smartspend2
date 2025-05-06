@@ -6,15 +6,38 @@
     app:startDestination="@id/homeFragment">
 
     <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.budgettrackerapp.ui.home.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_addExpenseFragment"
+            app:destination="@id/addExpenseFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_categoriesFragment"
+            app:destination="@id/categoriesFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_transactionsFragment"
+            app:destination="@id/transactionsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_budgetGoalFragment"
+            app:destination="@id/budgetGoalFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_dashboardFragment"
+            app:destination="@id/dashboardFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+
+    <fragment
         android:id="@+id/expenseDetailFragment"
         android:name="com.example.budgettrackerapp.ui.expenses.ExpenseDetailFragment"
         android:label="Expense Detail"
         tools:layout="@layout/fragment_expense_detail">
-
         <argument
             android:name="expenseId"
             app:argType="long" />
-
         <action
             android:id="@+id/action_expenseDetailFragment_back"
             app:destination="@id/transactionsFragment" />
@@ -25,7 +48,6 @@
         android:name="com.example.budgettrackerapp.ui.categories.AddCategoryFragment"
         android:label="Add Category"
         tools:layout="@layout/fragment_add_category">
-
         <action
             android:id="@+id/action_addCategoryFragment_back"
             app:destination="@id/categoriesFragment" />
@@ -42,12 +64,6 @@
         android:name="com.example.budgettrackerapp.ui.categories.CategoriesFragment"
         android:label="Categories"
         tools:layout="@layout/fragment_categories" />
-
-    <fragment
-        android:id="@+id/homeFragment"
-        android:name="com.example.budgettrackerapp.ui.home.HomeFragment"
-        android:label="Home"
-        tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/registerFragment"
@@ -71,5 +87,23 @@
             android:id="@+id/action_loginFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
     </fragment>
+
+    <fragment
+        android:id="@+id/budgetGoalFragment"
+        android:name="com.example.budgettrackerapp.ui.budget.BudgetGoalFragment"
+        android:label="Budget Goal"
+        tools:layout="@layout/fragment_budget_goal" />
+
+    <fragment
+        android:id="@+id/dashboardFragment"
+        android:name="com.example.budgettrackerapp.ui.dashboard.DashboardFragment"
+        android:label="Dashboard"
+        tools:layout="@layout/fragment_dashboard" />
+
+    <fragment
+        android:id="@+id/addExpenseFragment"
+        android:name="com.example.budgettrackerapp.ui.expenses.AddExpenseFragment"
+        android:label="Add Expense"
+        tools:layout="@layout/fragment_add_expense" />
 
 </navigation>

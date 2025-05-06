@@ -19,7 +19,7 @@ class SessionManager(context: Context) {
 
     private val sharedPreferences: SharedPreferences = try {
         EncryptedSharedPreferences.create(
-            context,
+            context, // Pass the context here
             "user_session",
             masterKey,
             EncryptedSharedPreferences.PrefKeyEncryptionScheme.AES256_SIV,

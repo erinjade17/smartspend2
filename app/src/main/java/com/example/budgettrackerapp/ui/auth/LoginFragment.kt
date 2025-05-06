@@ -20,8 +20,8 @@ import com.example.budgettrackerapp.utils.SessionManager
 import com.example.budgettrackerapp.viewmodels.AuthViewModel
 import com.example.budgettrackerapp.viewmodels.ViewModelFactory
 import androidx.lifecycle.lifecycleScope
+import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
-import androidx.lifecycle.Observer
 
 class LoginFragment : Fragment() {
 
@@ -78,25 +78,29 @@ class LoginFragment : Fragment() {
             }
 
             // Observe login result
-            authViewModel.loginUiState.observe(viewLifecycleOwner, Observer { state ->
-                viewLifecycleOwner.lifecycleScope.launch {
+            viewLifecycleOwner.lifecycleScope.launch {
+                authViewModel.loginUiState.collectLatest { state ->
                     when (state) {
                         is AuthViewModel.LoginUiState.Success -> {
                             sessionManager.saveUserSession(state.user.userId, state.user.username)
                             navigateToHome()
                         }
+
                         is AuthViewModel.LoginUiState.Error -> {
-                            Toast.makeText(requireContext(), state.message, Toast.LENGTH_SHORT).show()
+                            Toast.makeText(requireContext(), state.message, Toast.LENGTH_SHORT)
+                                .show()
                         }
+
                         is AuthViewModel.LoginUiState.Loading -> {
                             // Optionally show a loading indicator
                         }
+
                         AuthViewModel.LoginUiState.Initial -> {
                             // Initial state
                         }
                     }
                 }
-            })
+            }
         } catch (e: Exception) {
             Log.e("LoginFragment", "Error in onViewCreated: ${e.message}", e)
             Toast.makeText(requireContext(), "Error initializing LoginFragment", Toast.LENGTH_SHORT).show()
