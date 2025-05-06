@@ -38,7 +38,9 @@
                 android:id="@+id/et_amount"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="numberDecimal" />
+                android:inputType="numberDecimal"
+                android:minHeight="48dp"
+                android:contentDescription="Enter the amount of the expense" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -56,7 +58,9 @@
                 android:id="@+id/et_description"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="text" />
+                android:inputType="text"
+                android:minHeight="48dp"
+                android:contentDescription="Enter the description of the expense" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -74,7 +78,9 @@
                 android:id="@+id/spinner_category"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="none" />
+                android:inputType="none"
+                android:minHeight="48dp"
+                android:importantForAccessibility="no" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
@@ -94,6 +100,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:text="Select Date"
+            android:minHeight="48dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/tv_date_label"
             app:layout_constraintTop_toTopOf="@+id/tv_date_label" />
@@ -125,7 +132,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="4dp"
                 android:layout_weight="1"
-                android:text="Start Time" />
+                android:text="Start Time"
+                android:minHeight="48dp" />
 
             <Button
                 android:id="@+id/btn_end_time_picker"
@@ -134,7 +142,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
                 android:layout_weight="1"
-                android:text="End Time" />
+                android:text="End Time"
+                android:minHeight="48dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -159,7 +168,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="Take Photo" />
+                android:text="Take Photo"
+                android:minHeight="48dp" />
 
             <ImageView
                 android:id="@+id/iv_expense_photo"
@@ -168,7 +178,8 @@
                 android:layout_marginTop="8dp"
                 android:background="@android:color/darker_gray"
                 android:scaleType="centerCrop"
-                android:visibility="gone" />
+                android:visibility="gone"
+                android:contentDescription="Expense Photo" />
         </LinearLayout>
 
         <Button
@@ -177,6 +188,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
             android:text="Save Expense"
+            android:minHeight="48dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/layout_photo" />
