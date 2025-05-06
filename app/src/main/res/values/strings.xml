@@ -1,0 +1,51 @@
+<resources>
+    <string name="app_name">Budget Tracker</string>
+
+    <!-- Common -->
+    <string name="error_generic">An error occurred. Please try again.</string>
+    <string name="price_format">$%.2f</string>
+    <string name="time_range_format">%1$s - %2$s</string>
+
+    <!-- Login -->
+    <string name="login_title">Login</string>
+    <string name="hint_username">Username</string>
+    <string name="hint_password">Password</string>
+    <string name="btn_login">Login</string>
+    <string name="link_register">Don\'t have an account? Register here</string>
+
+    <!-- Register -->
+    <string name="register_title">Create New Account</string>
+    <string name="hint_confirm_password">Confirm Password</string>
+    <string name="btn_register">Register</string>
+    <string name="link_login">Already have an account? Login here</string>
+
+    <!-- Home -->
+    <string name="welcome_message">Welcome, %1$s</string>
+    <string name="total_spent">Total Spent</string>
+    <string name="budget_goal">Budget Goal</string>
+
+    <!-- Categories -->
+    <string name="categories_title">Categories</string>
+    <string name="empty_categories">No categories found\nClick the + button to add one</string>
+
+    <!-- Expenses -->
+    <string name="add_expense_title">Add New Expense</string>
+    <string name="hint_amount">Amount</string>
+    <string name="hint_description">Description</string>
+    <string name="hint_category">Category</string>
+    <string name="label_date">Date:</string>
+    <string name="label_time">Time (Optional):</string>
+    <string name="btn_select_date">Select Date</string>
+    <string name="btn_start_time">Start Time</string>
+    <string name="btn_end_time">End Time</string>
+    <string name="label_photo">Add Photo (Optional):</string>
+    <string name="btn_take_photo">Take Photo</string>
+    <string name="btn_save_expense">Save Expense</string>
+
+    <!-- Budget Goals -->
+    <string name="budget_goal_title">Budget Goals</string>
+    <string name="hint_min_goal">Minimum Goal</string>
+    <string name="hint_max_goal">Maximum Goal</string>
+    <string name="btn_select_month_year">Select Month and Year</string>
+    <string name="btn_save_goal">Save Budget Goal</string>
+</resources>
